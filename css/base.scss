@@ -1,0 +1,313 @@
+/*
+ * Solo - A small and beautiful blogging system written in Java.
+ * Copyright (c) 2010-present, b3log.org
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+$color: #a6accd !default;
+$aColor: #dee2e6 !default;
+$aHover: #e67700 !default;
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  height: 100%;
+  width: 100%;
+  color: $color;
+
+  a {
+    color: $aColor;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+      color: $aHover;
+      transition: all 0.5s;
+    }
+  }
+
+
+  #universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%);
+    z-index: -1;
+  }
+
+  #universe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%);
+    z-index: -1;
+  }
+
+  #sidebar {
+    position: fixed;
+    left: 0px;
+    width: 400px;
+    height: 100%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+
+      .sidebar {
+        margin-top: 100px;
+
+        section {
+          text-align: center;
+
+          .site-author-image {
+            padding: 2px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+          }
+
+          .feed-link {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+
+            a {
+              border-radius: 4px;
+              margin: 5px 10px 0;
+              padding: 6px 16px;
+              font-size: 14px;
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+
+          .svg-list {
+            margin: 15px 0;
+            a{
+              color: $aColor!important;
+            }
+            svg {
+              color: $aColor!important;
+              height: 25px;
+              width: 25px;
+              margin: 0 10px 5px;
+            }
+          }
+          .links-of-author{
+            margin-bottom: 15px;
+            .links-of-author-item{
+              margin: 0 10px;
+            }
+          }
+
+        }
+
+      }
+    }
+
+    .author-info.hide {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 80px;
+      top: 48px;
+    }
+  }
+
+  #menu-outer {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    height: 56px;
+    line-height: 56px;
+    border-bottom: 1px solid rgba(173, 181, 189, 0.4);
+  }
+
+  #main-container {
+    margin-left: 400px;
+    height: 100%;
+  }
+
+  #content-outer {
+    height: calc(100% - 140px);
+    overflow: auto;
+
+    #content-inner {
+      margin: 32px auto;
+      width: 900px;
+    }
+
+    #bottom-inner {
+      color: #dee2e6;
+    }
+  }
+
+  footer {
+    text-align: left;
+    padding: 0 16px;
+    width: calc(100% - 32px);
+    height: 65px;
+    line-height: 22px;
+    border-top: 1px solid rgba(173, 181, 189, 0.4);
+    font-size: 12px;
+    color: #dee2e6;
+    display: flex;
+    align-items: center;
+
+    #footer {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-direction: row;
+
+      div {
+        display: block;
+      }
+    }
+
+    .fn-right {
+      text-align: right;
+    }
+  }
+
+
+  header {
+    width: 100%;
+    padding: 25px 0;
+    font-size: 23px;
+    border-bottom: 1px solid rgba(173, 181, 189, 0.4);
+
+    .header {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .link {
+        font-size: 17px;
+      }
+    }
+  }
+
+
+}
+
+.hoverLeft {
+  position: relative;
+  margin-right: 16px;
+  transition: all 0.5s;
+
+  &:hover {
+    transition: all 0.5s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #e67700;
+    transition: all 0.5s;
+  }
+
+  &:hover:after {
+    width: 100%;
+    transition: all 0.5s;
+  }
+}
+
+.hoverMiddle {
+  margin-left: 16px;
+  position: relative;
+  transition: all 0.5s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #e67700;
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    color: #e67700;
+    transition: all 0.5s;
+  }
+
+  &:hover:after {
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+  }
+}
+
+.button-hover {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: $aColor;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: -20px;
+    width: 30px;
+    height: 80px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    transform: rotateZ(-30deg);
+  }
+
+  &:hover::before {
+    left: 100%;
+    top: -20px;
+    transform: rotateZ(0deg);
+    transition: all 0.5s;
+  }
+}
+
