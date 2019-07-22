@@ -35,15 +35,12 @@
         </div>
     </div>
 </footer>
-
-
 <script type="text/javascript" src="${staticServePath}/js/lib/compress/pjax.min.js" charset="utf-8"></script>
-<script type="text/javascript" src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}"
-        charset="utf-8"></script>
-<script type="text/javascript"
-        src="${staticServePath}/skins/${skinDirName}/js/common${miniPostfix}.js?${staticResourceVersion}"
-        charset="utf-8"></script>
-<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/canvas_bg.js?${staticResourceVersion}"
-        charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/common${miniPostfix}.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/canvas_bg.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/velocity.min.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/jquery.mCustomScrollbar.concat.min.js?${staticResourceVersion}" charset="utf-8"></script>
+<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/scroll.js?${staticResourceVersion}" charset="utf-8"></script>
 <#include "../../common-template/label.ftl">
 ${plugins}

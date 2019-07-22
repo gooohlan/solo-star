@@ -31,7 +31,7 @@
                     </#if>
                     <div class="feed-link">
                         <a href="${servePath}/rss.xml" class="button-hover" rel="alternate">
-                            RSSRSSSRSS
+                            RSS
                         </a>
                         <a href="${servePath}/tags.html" class="button-hover" rel="section">
                             标签
@@ -65,12 +65,6 @@
                         </#if>
                     </div>
 
-                    <#if noticeBoard??>
-                        <div class="links-of-author">
-                            ${noticeBoard}
-                        </div>
-                    </#if>
-
                     <#if 0 != links?size>
                         <div class="links-of-author">
                             <p class="site-author-name">友情链接</p>
@@ -82,6 +76,13 @@
                 </a>
             </span>
                             </#list>
+                        </div>
+                    </#if>
+
+
+                    <#if noticeBoard??>
+                        <div class="links-of-author">
+                            ${noticeBoard}
                         </div>
                     </#if>
                 </section>

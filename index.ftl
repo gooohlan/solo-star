@@ -23,12 +23,13 @@
 <head>
     <@head title="${blogTitle}">
         <link rel="stylesheet" href="${staticServePath}/skins/${skinDirName}/css/base.css?${staticResourceVersion}"/>
+        <link rel="stylesheet" href="${staticServePath}/skins/${skinDirName}/css/fa.css?${staticResourceVersion}"/>
+        <link rel="stylesheet" href="${staticServePath}/skins/${skinDirName}/css/jquery.mCustomScrollbar.min.css?${staticResourceVersion}"/>
     </@head>
 </head>
 <body>
 <div id="MathJax_Message" style="display: none;"></div>
 <canvas id="universe"></canvas>
-<body>
 <#include "side.ftl">
 
 <div id="main-container">
@@ -37,37 +38,21 @@
         <div id="content-inner">
             <div id="recent-posts">
 
-                ${statistic}
-            </div>
-            <div id="pagination">
-
+                <div class="main" id="pjax">
+                    <#if pjax><!---- pjax {#pjax} start ----></#if>
+                    <div class="content">
+                        <#include "article-list.ftl">
+                    </div>
+                    <#--    <#include "side.ftl">-->
+                    <#if pjax><!---- pjax {#pjax} end ----></#if>
+                </div>
             </div>
         </div>
     </div>
-    <div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div>
-    <!-- 底部 -->
+
+    <div class="button-hover" id="return-top" style="opacity: 1; display: block;"><i class="fas fa-arrow-up" aria-hidden="true"></i></div>
     <#include "footer.ftl">
 </div>
-
-
-<#--    <div class="left">-->
-
-<#--    </div>-->
-<#--    <div class="right">-->
-<#--        <#include "header.ftl">-->
-<#--        <div class="main" id="pjax">-->
-<#--            <#if pjax><!---- pjax {#pjax} start --&ndash;&gt;</#if>-->
-<#--            <div class="content" style="height: 5000px">-->
-<#--                这是首页-->
-<#--                <main>-->
-<#--                </main>-->
-<#--            </div>-->
-<#--            &lt;#&ndash;    <#include "side.ftl">&ndash;&gt;-->
-<#--            <#if pjax><!---- pjax {#pjax} end --&ndash;&gt;</#if>-->
-<#--        </div>-->
-<#--        <#include "footer.ftl">-->
-<#--    </div>-->
-
 
 </body>
 </html>
