@@ -520,7 +520,71 @@ body {
     cursor: pointer;
     z-index: 9;
   }
+
+  #page {
+    .tag-cloud {
+      padding-top: 32px;
+      text-align: center;
+    }
+
+    .tag-cloud-title {
+      display: inline-block;
+      font-size: 30px;
+    }
+
+    .tag-cloud-line {
+      margin: 0 16px;
+      font-size: 30px;
+    }
+
+    .tag-cloud-amount {
+      font-size: 30px;
+    }
+
+    .tag-cloud-tags {
+      margin: 32px 0 0 0;
+
+      a {
+        display: inline-block;
+        margin: 16px 16px;
+        font-size: 12px;
+        color: #a4d8fa
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+      }
+
+      .tags1 {
+        font-size: 12px;
+        color: #a4d8fa
+      }
+
+      .tags2 {
+        font-size: 16px;
+        color: #85caf7
+      }
+
+      .tags3 {
+        font-size: 21px;
+        color: #55b4f1
+      }
+
+      .tags4 {
+        font-size: 24px;
+        color: #269eec
+      }
+
+      .tags5 {
+        font-size: 30px;
+        color: #0790e8
+      }
+    }
+  }
+
 }
+
 
 @-moz-keyframes rotate3ding {
   0% {

@@ -15,8 +15,8 @@
 
     You should have received a copy of the GNU Affero General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-<#--官方网站：http://leetcode.com/LeetCode 是一个美国的在线编程网站，上面主要收集了各大IT公司的笔试面试题，对于找工作是一个不可多得的好帮手。LeetCode上面的题目偏基础性...-->
 
+-->
 <div id="article-list">
     <#list articles as article>
         <div id="article-list">
