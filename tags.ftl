@@ -44,16 +44,10 @@
                             <div class="category-lists">
                                 <div class="tag-cloud-title">分类</div>
                                 <span class="tag-cloud-line">-</span><span class="tag-cloud-amount">${mostUsedCategories?size}</span>
-<#--                                <div>-->
-<#--                                   <#list mostUsedCategories as category>-->
-<#--                                    ${category}-->
-<#--                                    </#list>-->
-
-<#--                                </div>-->
                                 <ul class="category-list">
                                     <#list mostUsedCategories as category>
                                     <li class="category-list-item">
-                                        <a class="category-list-link" href="${servePath}/category/${category.categoryURI}">${category.categoryTitle} (${category.categoryTagCnt})</a>
+                                        <a class="category-list-link" href="${servePath}/category/${category.categoryURI}">${category.categoryTitle}</a>
                                         <small>${category.categoryDescription}</small></a>
                                     </li>
                                     </#list>
