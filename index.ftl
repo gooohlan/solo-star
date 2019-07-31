@@ -49,7 +49,6 @@
             </div>
         </div>
     </div>
-
     <div class="button-hover" id="return-top" style="opacity: 1; display: block;"><i class="fas fa-arrow-up" aria-hidden="true"></i></div>
     <#include "footer.ftl">
 </div>

@@ -1,0 +1,35 @@
+
+                        <article id="post">
+                            <div>
+                                ${article.articleTitle}
+                            </div>
+                            发表于:
+                            ${article.articleCreateDate?string("yyyy-MM-dd")}|更新于${article.articleCreateDate?string("yyyy-MM-dd")}
+                            <#list article.articleTags?split(",") as articleTag>
+                                <div class="button-hover categories"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a
+                                            class="link-a" href="${servePath}/tags/${articleTag?url('UTF-8')}">${articleTag}</a>
+                                </div>
+                            </#list>
+                            ${article.articleContent}
+                            <#if "" != article.articleSign.signHTML?trim>
+                                <div>
+                                    ${article.articleSign.signHTML}
+                                </div>
+                            </#if>
+                            <div class="post-nav fn-clear">
+                                <#if previousArticlePermalink??>
+                                    <div class="post-nav-prev post-nav-item fn-right">
+                                        <a href="${servePath}${previousArticlePermalink}" rel="prev" title="${previousArticleTitle}">
+                                            ${previousArticleTitle} >
+                                        </a>
+                                    </div>
+                                </#if>
+                                <#if nextArticlePermalink??>
+                                    <div class="post-nav-next post-nav-item fn-left">
+                                        <a href="${servePath}${nextArticlePermalink}" rel="next" title="${nextArticleTitle}">
+                                            < ${nextArticleTitle}
+                                        </a>
+                                    </div>
+                                </#if>
+                            </div>
+                        </article>
