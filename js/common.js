@@ -144,11 +144,3 @@ var Skin = {
   },
 }
 Skin.init()
-// $(".vditor-copy").find("span").children().replaceWith("<i class=\"fa fa-clipboard\" aria-hidden=\"true\" title=\"我是鼠标悬停展示的内容\"></i>")
-$(".vditor-copy").prepend("<span>code</span>")
-$("pre").find("code").each(function () {
-  let str = $(this).attr("class")
-  if (str != undefined && str.indexOf("language-") != -1) {
-    $(this).prev().find("span:first-child").text(str.split("language-")[1])
-  }
-})

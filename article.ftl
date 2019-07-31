@@ -126,7 +126,7 @@
     $("pre").find("code").each(function () {
         let str = $(this).attr("class")
         if (str != undefined && str.indexOf("language-") != -1) {
-            $(this).prev().find("span").text(str.split("language-")[1])
+            $(this).prev().find("span:first-child").text(str.split("language-")[1])
         }
     })
 </script>

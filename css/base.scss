@@ -18,8 +18,8 @@
 $color: #a6accd !default;
 $aColor: #dee2e6 !default;
 $aHover: #e67700 !default;
-$tooltipBg: rgba(0, 0, 0, 0.8) !default;
-$tooltipColor:#fff !default;
+$tooltipColor: #fff !default;
+$tooltipBg: rgba(255, 255, 255, 0.1) !default;
 html {
   width: 100%;
   height: 100%;
@@ -816,9 +816,11 @@ body {
 
     .main-content {
       line-height: 28px;
+
       img {
         max-width: 100%;
       }
+
       blockquote {
         margin: 0;
         position: relative;
@@ -955,6 +957,7 @@ body {
 
       a {
         color: #49b1f5;
+
         &:hover {
           color: $aHover;
           transition: all 0.5s;
@@ -970,34 +973,76 @@ body {
         color: #a6accd;
         font-size: 14px;
         line-height: 20px;
+
         .vditor-copy {
-          background-color: #1f222f;
+          background-color: rgba(65, 77, 127, 0.7);
           height: 32px;
           line-height: 32px;
           display: flex;
           justify-content: space-between;
           padding: 0 10px;
+
           textarea {
             position: absolute;
             left: -999999px;
           }
-          span{
-            background-color: transparent!important;
+
+          span {
+            background-color: transparent !important;
           }
-          span:last-child{
+
+          span:last-child {
             cursor: pointer;
+
             &:hover {
               color: $aHover;
               transition: all 0.5s;
             }
           }
         }
-        .hljs{
-          background: #292d3e;
+
+        .hljs {
+          background: rgba(31, 36, 58, 0.7);
           color: #a6accd;
         }
       }
 
+      table {
+        width: 100%;
+        border: 1px solid #dedede;
+        margin: 15px auto;
+        border-collapse: collapse;
+        empty-cells: show;
+
+        thead {
+          text-align: center;
+        }
+
+        th {
+          font-weight: 700;
+          text-align: center !important;
+          background: rgba(158, 188, 226, .2);
+        }
+
+        td, th {
+          height: 35px;
+          border: 1px solid #dedede;
+          padding: 0 10px;
+        }
+
+        tbody tr {
+          &:nth-child(2n) {
+            background: rgba(158, 188, 226, .12);
+            &:hover {
+              background: rgba(158, 188, 226, .12);
+            }
+          }
+          &:hover {
+            background: rgba(255,255,255,0.1)
+          }
+        }
+
+      }
 
     }
   }
@@ -1142,9 +1187,26 @@ body {
   }
 }
 
+/**
+ * tool tip.
+ *
+ * @author <a href="http://vanessa.b3log.org">Liyuan Li</a>
+ * @version 0.1.0.0, Jan 25, 2019
+ */
+@keyframes tooltip-appear {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
 .vditor-tooltipped {
   position: relative;
   cursor: pointer;
+
   &::after {
     position: absolute;
     z-index: 1000000;
@@ -1175,12 +1237,91 @@ body {
     display: none;
     width: 0;
     height: 0;
-    color: $aHover;
+    color: $tooltipBg;
     pointer-events: none;
     content: "";
     border: 5px solid transparent;
     opacity: 0
   }
+
+  &--hover::before,
+  &--hover::after,
+  &:hover::before,
+  &:hover::after,
+  &:active::before,
+  &:active::after,
+  &:focus::before,
+  &:focus::after {
+    display: inline-block;
+    text-decoration: none;
+    animation-name: tooltip-appear;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0.4s
+  }
+
+  &__s::after,
+  &__se::after,
+  &__sw::after {
+    top: 100%;
+    right: 50%;
+    margin-top: 5px
+  }
+
+  &__s::before,
+  &__se::before,
+  &__sw::before {
+    top: auto;
+    right: 50%;
+    bottom: -5px;
+    margin-right: -5px;
+    border-bottom-color: $tooltipBg
+  }
+
+  &__se::after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px
+  }
+
+  &__sw::after {
+    margin-right: -15px
+  }
+
+  &__n::after,
+  &__ne::after,
+  &__nw::after {
+    right: 50%;
+    bottom: 100%;
+    margin-bottom: 5px
+  }
+
+  &__n::before,
+  &__ne::before,
+  &__nw::before {
+    top: -5px;
+    right: 50%;
+    bottom: auto;
+    margin-right: -5px;
+    border-top-color: $tooltipBg
+  }
+
+  &__ne::after {
+    right: auto;
+    left: 50%;
+    margin-left: -15px
+  }
+
+  &__nw::after {
+    margin-right: -15px
+  }
+
+  &__s::after,
+  &__n::after {
+    transform: translateX(50%)
+  }
+
   &__w::after {
     right: 100%;
     bottom: 50%;
@@ -1195,11 +1336,23 @@ body {
     margin-top: -5px;
     border-left-color: $tooltipBg;
   }
+
+  &__e::after {
+    bottom: 50%;
+    left: 100%;
+    margin-left: 5px;
+    transform: translateY(50%)
+  }
+
+  &__e::before {
+    top: 50%;
+    right: -5px;
+    bottom: 50%;
+    margin-top: -5px;
+    border-right-color: $tooltipBg
+  }
 }
 
-a{
-  color: #0a0a0a;
-}
 
 
 
