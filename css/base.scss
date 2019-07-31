@@ -1170,6 +1170,63 @@ body {
     transition: all 0.5s;
   }
 }
+.hoverMiddle {
+  margin-left: 16px;
+  position: relative;
+  transition: all 0.5s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #e67700;
+    transition: all 0.5s;
+  }
+
+  &:hover {
+    color: #e67700;
+    transition: all 0.5s;
+  }
+
+  &:hover:after {
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+  }
+}
+.button-hover {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    color: $aColor;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    top: -20px;
+    width: 30px;
+    height: 80px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    transform: rotateZ(-30deg);
+  }
+
+  &:hover::before {
+    left: 100%;
+    top: -20px;
+    transform: rotateZ(0deg);
+    transition: all 0.5s;
+  }
+}
+
 
 /**
  * tool tip.

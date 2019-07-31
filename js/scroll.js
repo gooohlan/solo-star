@@ -95,7 +95,7 @@
     /**
      * @description menu link scroll to content
      */
-    $('.sidebar-toc-content .toc-link').on('click', function (e) {
+    $('.sidebar .article__toc').find("li").find("a").on('click', function (e) {
         e.preventDefault();
         let _id = $(this).attr('href');
         $('#content-outer').mCustomScrollbar('scrollTo', _id, {
@@ -109,35 +109,21 @@
      */
     function findHeadPosition(el) {
         let currentId = '';
-        const menuHeight = $('#menu-outer').height() + 1;
-        // console.log(el.mcs);
+        const menuHeight = $('header').height() + 1;
         let list = $('#post').find('h1,h2,h3,h4,h5,h6');
         list.each(function () {
             if ($(this).offset().top <= menuHeight) {
                 currentId = $(this).attr('id');
+            }else{
             }
         });
-        $('.sidebar-toc-content .toc-link').removeClass('active');
+        $('.sidebar .article__toc').find("li").find("a").removeClass('active');
         if (currentId === '') {
-            // currentId = list[0].id;
             return;
         }
-        let $this = $('.sidebar-toc-content .toc-link[href="#' + currentId + '"]');
+        let $this = $('a[href="#' + currentId + '"]');
+        console.log($this.html())
         $this.addClass('active');
-        let parents = $this.parents('.toc-child');
-        if (parents.length > 0) {
-            let child = null;
-            parents.length > 1 ? child = parents.eq(parents.length - 1).find('.toc-child') : child = parents;
-            if (child.length > 0 && child.is(':hidden')) {
-                expandToc(child);
-            }
-            parents.eq(parents.length - 1).closest('.toc-item').siblings('.toc-item').find('.toc-child').hide();
-        } else {
-            if ($this.closest('.toc-item').find('.toc-child').is(':hidden')) {
-                expandToc($this.closest('.toc-item').find('.toc-child'));
-            }
-            $this.closest('.toc-item').siblings('.toc-item').find('.toc-child').hide();
-        }
     }
 
     /**
