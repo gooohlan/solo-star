@@ -18,6 +18,8 @@
 
 -->
 <#include "../../common-template/macro-common_head.ftl">
+<#include "macro-comments.ftl">
+<#include "../../common-template/macro-comment_script.ftl">
 <!DOCTYPE html>
 <html>
 <head>
@@ -109,13 +111,13 @@
                             </div>
                         </#if>
                     </div>
-                    <#--    <#include "side.ftl">-->
+
+                    <@comments commentList=articleComments article=article></@comments>
                     <#if pjax><!---- pjax {#pjax} end ----></#if>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="button-hover" id="return-top" style="opacity: 1; display: block;"><i class="fas fa-arrow-up"
                                                                                      aria-hidden="true"></i></div>
     <#include "footer.ftl">

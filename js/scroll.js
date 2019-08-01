@@ -95,7 +95,7 @@
     /**
      * @description menu link scroll to content
      */
-    $('.sidebar .article__toc').find("li").find("a").on('click', function (e) {
+    $('#sidebar .article__toc').find("li").find("a").on('click', function (e) {
         e.preventDefault();
         let _id = $(this).attr('href');
         $('#content-outer').mCustomScrollbar('scrollTo', _id, {
@@ -117,24 +117,57 @@
             }else{
             }
         });
-        $('.sidebar .article__toc').find("li").find("a").removeClass('active');
+        $('#sidebar .article__toc').find("li").find("a").removeClass('active');
         if (currentId === '') {
             return;
         }
         let $this = $('a[href="#' + currentId + '"]');
-        console.log($this.html())
         $this.addClass('active');
     }
 
-    /**
-     * @description expand toc-item
-     * @param $item
-     */
-    function expandToc($item) {
-        // $item.show();
-        $item.velocity('stop').velocity('fadeIn', {
-            duration: 500,
-            easing: 'easeInQuart'
-        });
-    }
+    $('.toggle-sidebar-info span').on('click', function () {
+        let toggleText = $(this).attr('data-toggle');
+        $(this).attr('data-toggle', $(this).text());
+        $(this).text(toggleText);
+        if ($('.sidebar .author-info').is(':visible')) {
+            $('#sidebar .author-info').velocity('stop').velocity({
+                left: '80px',
+                opacity: 0
+            }, {
+                duration: 300,
+                display: 'none',
+                easing: 'ease-in',
+                complete: function () {
+                    $('#sidebar #sidebar-toc').velocity('stop').velocity({
+                        opacity: 1,
+                        left: 0
+                    }, {
+                        duration: 500,
+                        display: 'block',
+                        easing: 'ease-out'
+                    });
+                }
+            });
+        } else {
+            $('#sidebar #sidebar-toc').velocity('stop').velocity({
+                opacity: 0,
+                left: '-80px'
+            }, {
+                duration: 300,
+                display: 'none',
+                easing: 'ease-in',
+                complete: function () {
+                    $('#sidebar .author-info').velocity('stop').velocity({
+                        left: '0px',
+                        opacity: 1
+                    }, {
+                        duration: 500,
+                        display: 'flex',
+                        easing: 'ease-out'
+                    });
+                }
+            });
+        }
+    });
+
 }());

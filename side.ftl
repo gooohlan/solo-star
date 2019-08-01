@@ -18,11 +18,8 @@
 
 -->
 <div id="sidebar">
-    <div class="author-info">
+    <div class="author-info" <#if article?? && article.articleToC?? && article.articleToC?size &gt; 0> style="display: none;" </#if>>
         <aside class="sidebar">
-            <#if article?? && article.articleToC?? && article.articleToC?size &gt; 0>
-                <#include "../../common-template/toc.ftl"/>
-            </#if>
             <section>
                 <img class="site-author-image" src="${adminUser.userAvatar}" title="${userName}"/>
                 <p class="site-author-name">${userName}</p>
@@ -87,5 +84,19 @@
                 </#if>
             </section>
         </aside>
+
     </div>
+    <#if article?? && article.articleToC?? && article.articleToC?size &gt; 0>
+        <div class="toggle-sidebar-info button-hover">
+            <span data-toggle="文章目录">站点概览</span>
+        </div>
+        <div class="sidebar-toc">
+            <div class="sidebar-toc-title">目录</div>
+            <div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span
+                        class="progress-num">0</span><span class="progress-percentage">%</span>
+                <div class="sidebar-toc-progress-bar"></div>
+            </div>
+            <#include "../../common-template/toc.ftl"/>
+        </div>
+    </#if>
 </div>
