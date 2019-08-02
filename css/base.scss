@@ -20,11 +20,11 @@ $aColor: #dee2e6 !default;
 $aHover: #e67700 !default;
 $white: #fff !default;
 $tooltipBg: rgba(255, 255, 255, 0.1) !default;
-@import "../../../scss/reset";
-@import "../../../scss/function";
-@import "../../../scss/nprogress";
-@import "../../../scss/toc";
-@import "vditor/src/assets/scss/classic";
+//@import "../../../scss/reset";
+//@import "../../../scss/function";
+//@import "../../../scss/nprogress";
+//@import "../../../scss/toc";
+//@import "vditor/src/assets/scss/classic";
 html {
   width: 100%;
   height: 100%;
@@ -240,8 +240,14 @@ body {
           line-height: 28px;
           list-style-type: none;
 
+          &:hover {
+            color: $aHover;
+            transition: all 0.5s;
+          }
+
           &.current {
             color: $aHover;
+
             a {
               color: $aHover;
             }
@@ -1510,6 +1516,9 @@ body {
     margin-top: -5px;
     border-right-color: $tooltipBg
   }
+}
+.vditor, #soloEditorCancel{
+  color: #000;
 }
 
 

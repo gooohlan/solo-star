@@ -145,6 +145,7 @@
             $(this).prev().find("span:first-child").text(str.split("language-")[1])
         }
     })
+    $(".article__toc").find("li:first-child").addClass("current")
 </script>
 </body>
 </html>

@@ -28,9 +28,9 @@
         <div class="fn-right">
             <span>
             Powered by <a href="https://solo.b3log.org" target="_blank">Solo</a>&nbsp;&nbsp;
-            Theme <a rel="friend" href="https://github.com/b3log/solo-skins" target="_blank">${skinDirName}</a>
+            Theme <a rel="friend" href="https://github.com/JinJianh/solo-star" target="_blank">${skinDirName}</a>
             by
-            <a rel="friend" href="https://github.com/JinJianh" target="_blank">JinJianh</a>
+            <a rel="friend" href="http://vanessa.b3log.org" target="_blank">Vanessa</a>
         </span>
         </div>
     </div>

@@ -108,21 +108,59 @@
      * @param el
      */
     function findHeadPosition(el) {
-        let currentId = '';
-        const menuHeight = $('header').height() + 1;
-        let list = $('#post').find('h1,h2,h3,h4,h5,h6');
-        list.each(function () {
-            if ($(this).offset().top <= menuHeight) {
-                currentId = $(this).attr('id');
-            }else{
+        // let currentId = '';
+        // const menuHeight = $('header').height() + 1;
+        // let list = $('#post').find('h1,h2,h3,h4,h5,h6');
+        // list.each(function () {
+        //     if ($(this).offset().top <= menuHeight) {
+        //         currentId = $(this).attr('id');
+        //     }else{
+        //     }
+        // });
+        // $('#sidebar .article__toc').find("li").find("a").removeClass('active');
+        // if (currentId === '') {
+        //     return;
+        // }
+        // let $this = $('a[href="#' + currentId + '"]');
+        // $this.addClass('active');
+        if ($('.article__toc').length === 0) {
+            return
+        }
+
+        var $articleTocs = $('.vditor-reset [id^=b3_solo_h]'),
+            $articleToc = $('.article__toc');
+
+        $(window).unbind('scroll').scroll(function (event) {
+            if ($('.article__toc li').length === 0) {
+                return false;
+            }
+
+            // 界面各种图片加载会导致帖子目录定位
+            var toc = [];
+            $articleTocs.each(function (i) {
+                toc.push({
+                    id: this.id,
+                    offsetTop: $(this).offset().top
+                });
+            });
+
+            // 当前目录样式
+            const menuHeight = $('header').innerHeight() + 3;
+            for (var i = 0, iMax = toc.length; i < iMax; i++) {
+                if (menuHeight < toc[i].offsetTop - 20) {
+                    $articleToc.find('li').removeClass('current');
+                    var index = i > 0 ? i - 1 : 0;
+                    $articleToc.find('a[href="#' + toc[index].id + '"]').parent().addClass('current');
+                    break;
+                }
+            }
+            if (menuHeight >= toc[toc.length - 1].offsetTop - 20) {
+                $articleToc.find('li').removeClass('current');
+                $articleToc.find('li:last').addClass('current');
             }
         });
-        $('#sidebar .article__toc').find("li").find("a").removeClass('active');
-        if (currentId === '') {
-            return;
-        }
-        let $this = $('a[href="#' + currentId + '"]');
-        $this.addClass('active');
+
+        $(window).scroll()
     }
 
     $('.toggle-sidebar-info span').on('click', function () {
