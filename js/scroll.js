@@ -129,7 +129,7 @@
         let toggleText = $(this).attr('data-toggle');
         $(this).attr('data-toggle', $(this).text());
         $(this).text(toggleText);
-        if ($('.sidebar .author-info').is(':visible')) {
+        if ($('#sidebar .author-info').is(':visible')) {
             $('#sidebar .author-info').velocity('stop').velocity({
                 left: '80px',
                 opacity: 0
@@ -138,7 +138,7 @@
                 display: 'none',
                 easing: 'ease-in',
                 complete: function () {
-                    $('#sidebar #sidebar-toc').velocity('stop').velocity({
+                    $('#sidebar .sidebar-toc').velocity('stop').velocity({
                         opacity: 1,
                         left: 0
                     }, {
@@ -149,7 +149,7 @@
                 }
             });
         } else {
-            $('#sidebar #sidebar-toc').velocity('stop').velocity({
+            $('#sidebar .sidebar-toc').velocity('stop').velocity({
                 opacity: 0,
                 left: '-80px'
             }, {
