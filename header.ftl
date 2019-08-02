@@ -27,8 +27,8 @@
                     <#if page.pageIcon != ''></#if>${page.pageTitle}
                 </a>
             </#list>
-            <a href="https://88250.b3log.org/search" class="search hoverMiddle">
-                搜索
+            <a href="/search" class="search hoverMiddle">
+                <i class="fas fa-search article-icon" aria-hidden="true"></i>
             </a>
         </div>
 

@@ -24,7 +24,7 @@ $tooltipBg: rgba(255, 255, 255, 0.1) !default;
 //@import "../../../scss/function";
 //@import "../../../scss/nprogress";
 //@import "../../../scss/toc";
-//@import "vditor/src/assets/scss/classic";
+@import "vditor/src/assets/scss/classic";
 html {
   width: 100%;
   height: 100%;
@@ -1151,6 +1151,40 @@ body {
       }
 
     }
+
+    /**
+     * 去除默认样式
+     */
+    .vditor-reset {
+      h1, h2 {
+        border: none;
+      }
+
+      blockquote {
+        border: none;
+        color: $aColor;
+      }
+
+      .vditor-copy {
+        span {
+          cursor: pointer;
+          position: relative;
+          right: 0;
+          top: 0;
+          padding: 0;
+          height: auto;
+          width: auto;
+        }
+      }
+
+      thead tr {
+        background: rgba(158, 188, 226, .12);
+
+        &:hover {
+          background: rgba(158, 188, 226, .12);
+        }
+      }
+    }
   }
 }
 
@@ -1517,8 +1551,145 @@ body {
     border-right-color: $tooltipBg
   }
 }
-.vditor, #soloEditorCancel{
+
+.vditor, #soloEditorCancel {
   color: #000;
+}
+
+#comment {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 0;
+  resize: none;
+  cursor: pointer;
+  width: 90%;
+  top: 20px;
+  left: 5%;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+#comments {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0;
+  list-style: none;
+  margin-top: 50px;
+  position: relative;
+
+  li {
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+    position: relative;
+    border-bottom: #EBF2F6 1px solid;
+    border-radius: 3px;
+    img {
+      max-width: 100%;
+    }
+
+    .avatar-48 {
+      position: absolute;
+      box-shadow: 0 0 2px #ddd;
+      height: 48px;
+      width: 48px;
+      margin: 8px 10px 0 0;
+      border-radius: 24px;
+    }
+
+    .comment-body {
+      margin: 8px 0 0 60px;
+      min-height: 50px;
+
+      .fn-clear {
+        &::after {
+          clear: both;
+          line-height: 0;
+        }
+
+        &::before, &::after {
+          display: table;
+          content: "";
+          line-height: 0;
+        }
+      }
+
+      .comment-meta {
+        font-family: "Open Sans", "Microsoft Yahei", Helvetica;
+        color: $color;
+        font-size: 13px;
+        margin-bottom: 10px;
+
+        .fn-left {
+          float: left;
+        }
+
+        .fn-right {
+          float: right;
+        }
+
+        a {
+          text-decoration: none;
+          border-bottom-width: 0;
+        }
+
+        time {
+          border-left: 1px solid #d5dbde;
+          margin-left: 8px;
+          padding-left: 12px;
+        }
+      }
+
+      .comment-content {
+        font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+        word-wrap: break-word;
+        overflow: auto;
+        line-height: 1.65;
+        font-size: 16px;
+        word-wrap: break-word;
+        text-align: justify;
+      }
+    }
+  }
+
+  .item {
+    margin-bottom: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    list-style: none;
+    padding: 20px;
+  }
+
+  .item__avatar {
+    float: left;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    margin: 0 20px 20px 0;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .item__name {
+    color: rgba(115, 138, 148, 0.8);
+    float: left;
+    line-height: 40px;
+  }
+}
+.links-of-author-item a{
+  border-bottom: 1px solid $aColor;
+  &:hover{
+    border-bottom: 1px solid $aHover;
+  }
 }
 
 

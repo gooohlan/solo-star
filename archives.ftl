@@ -44,9 +44,10 @@
                         <h1 class="article-sort-item title">${articleLabel} - ${statistic.statisticPublishedBlogArticleCount}</h1>
 <#--                        <#include "abc-list.ftl">-->
 <#--                        ${articles}-->
-                        <#list articles as article>
-                            1111
-                        </#list>
+<#--                        <#list articles as article>-->
+<#--                            1111-->
+<#--                        </#list>-->
+                        页面开发中
                     </div>
                     <#--    <#include "side.ftl">-->
                     <#if pjax><!---- pjax {#pjax} end ----></#if>

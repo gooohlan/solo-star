@@ -30,7 +30,7 @@
             Powered by <a href="https://solo.b3log.org" target="_blank">Solo</a>&nbsp;&nbsp;
             Theme <a rel="friend" href="https://github.com/JinJianh/solo-star" target="_blank">${skinDirName}</a>
             by
-            <a rel="friend" href="http://vanessa.b3log.org" target="_blank">Vanessa</a>
+            <a rel="friend" href="http://vanessa.b3log.org" target="_blank">Vanessa</a>q
         </span>
         </div>
     </div>
@@ -41,6 +41,6 @@
 <script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/velocity.min.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/jquery.mCustomScrollbar.concat.min.js?${staticResourceVersion}" charset="utf-8"></script>
 <script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/scroll.js?${staticResourceVersion}" charset="utf-8"></script>
-<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/common.js?${staticResourceVersion}" charset="utf-8"></script>
+<#--<script type="text/javascript" src="${staticServePath}/skins/${skinDirName}/js/common.js?${staticResourceVersion}" charset="utf-8"></script>-->
 <#include "../../common-template/label.ftl">
 ${plugins}
