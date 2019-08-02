@@ -22,7 +22,7 @@
         <aside class="sidebar">
             <section>
                 <img class="site-author-image" src="${adminUser.userAvatar}" title="${userName}"/>
-                <p class="site-author-name">${userName}</p>
+                <p class="site-author-name">${blogTitle}</p>
                 <#if "" != noticeBoard>
                     <p class="site-description motion-element">${blogSubtitle}</p>
                 </#if>
