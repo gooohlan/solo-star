@@ -106,7 +106,7 @@
                                 <span class="line line-left"></span>
                                 <a href="${servePath}${nextArticlePermalink}" rel="next" title="${nextArticleTitle}">
                                     <i class="fas fa-angle-left"></i>
-                                     ${nextArticleTitle}
+                                    ${nextArticleTitle}
                                 </a>
                             </div>
                         </#if>
@@ -121,6 +121,20 @@
     <div class="button-hover" id="return-top" style="opacity: 1; display: block;"><i class="fas fa-arrow-up"
                                                                                      aria-hidden="true"></i></div>
     <#include "footer.ftl">
+    <@comment_script oId=article.oId commentable=article.commentable>
+        page.tips.externalRelevantArticlesDisplayCount = "${externalRelevantArticlesDisplayCount}";
+        <#if 0 != randomArticlesDisplayCount>
+            page.loadRandomArticles('<h3>RECOMMEND POSTS</h3>');
+        </#if>
+        <#if 0 != externalRelevantArticlesDisplayCount>
+            page.loadExternalRelevantArticles("<#list article.articleTags?split(",") as articleTag>${articleTag}<#if articleTag_has_next>,</#if></#list>",
+            '<h3>HACPAI POSTS</h3>');
+        </#if>
+        <#if 0 != relevantArticlesDisplayCount>
+            page.loadRelevantArticles('${article.oId}', '<h3>RELEVANT POSTS</h3>');
+        </#if>
+        Skin.initArticle()
+    </@comment_script>
 </div>
 <script>
     $(".vditor-copy").find("span").children().replaceWith("<i class=\"fa fa-clipboard\" aria-hidden=\"true\"></i>")
