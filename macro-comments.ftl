@@ -24,8 +24,6 @@
     </#list>
 </ul>
 <#if article.commentable>
-<div class="form">
-    <textarea rows="3" placeholder="${postCommentsLabel}" id="comment"></textarea>
-</div>
+    <textarea rows="3" placeholder="Your comment here. Be cool. " id="comment" readonly="readonly"></textarea>
 </#if>
 </#macro>
