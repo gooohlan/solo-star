@@ -83,15 +83,6 @@
         callbacks: {}
     });
 
-    // $('figure.highlight').mCustomScrollbar({
-    //     theme: 'minimal',
-    //     axis: 'x', // horizontal scrollbar
-    //     mouseWheel: {
-    //         enable: false
-    //     },
-    //     callbacks: {}
-    // });
-
     /**
      * @description menu link scroll to content
      */
@@ -108,21 +99,6 @@
      * @param el
      */
     function findHeadPosition(el) {
-        // let currentId = '';
-        // const menuHeight = $('header').height() + 1;
-        // let list = $('#post').find('h1,h2,h3,h4,h5,h6');
-        // list.each(function () {
-        //     if ($(this).offset().top <= menuHeight) {
-        //         currentId = $(this).attr('id');
-        //     }else{
-        //     }
-        // });
-        // $('#sidebar .article__toc').find("li").find("a").removeClass('active');
-        // if (currentId === '') {
-        //     return;
-        // }
-        // let $this = $('a[href="#' + currentId + '"]');
-        // $this.addClass('active');
         if ($('.article__toc').length === 0) {
             return
         }
