@@ -139,7 +139,7 @@
         $(window).scroll()
     }
 
-    $('.toggle-sidebar-info span').on('click', function () {
+    $('.toggle-sidebar-info').on('click', function () {
         let toggleText = $(this).attr('data-toggle');
         $(this).attr('data-toggle', $(this).text());
         $(this).text(toggleText);
