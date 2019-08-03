@@ -28,6 +28,7 @@
                 </a>
             </#list>
             <a href="/search" class="search hoverMiddle">
+<#--            <a href="${servePath}/search.html" class="search hoverMiddle">-->
                 <i class="fas fa-search article-icon" aria-hidden="true"></i>
             </a>
         </div>
