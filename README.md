@@ -13,6 +13,16 @@
 * 搜索页面过段时间应该会美化
 
 ###  鸣谢
-* [solo](https://github.com/b3log/solo)：提供博客系统
 * [88250](https://github.com/88250)：提供solo框架
 * [Vanessa](https://github.com/Vanessa219)：帮我修复BUG
+
+### 页面预览
+
+
+![image.png](https://img.hacpai.com/file/2019/08/image-1e7f2361.png)
+
+![image.png](https://img.hacpai.com/file/2019/08/image-aed5f121.png)
+
+![image.png](https://img.hacpai.com/file/2019/08/image-228640b2.png)
+
+![image.png](https://img.hacpai.com/file/2019/08/image-0eac60ae.png)

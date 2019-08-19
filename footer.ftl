@@ -30,7 +30,7 @@
             Powered by <a href="https://solo.b3log.org" target="_blank">Solo</a>&nbsp;&nbsp;
             Theme <a rel="friend" href="https://github.com/JinJianh/solo-star" target="_blank">${skinDirName}</a>
             by
-            <a rel="friend" href="http://vanessa.b3log.org" target="_blank">Vanessa</a>
+            <a rel="friend" href="https://www.jinjianh.com" target="_blank">JinJian</a>
         </span>
         </div>
     </div>
