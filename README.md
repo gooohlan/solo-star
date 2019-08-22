@@ -1,7 +1,7 @@
 # solo-star
 ###  简介
 * [solo-star](https://github.com/JinJianh/solo-star)移植自[吕钒的后花园](https://www.lvfan.xyz/)
-* 基于[solo](https://github.com/b3log/solo)的一款小皮肤，预览前往[金戋博客](https://www.jinjianh.com)
+* 基于[solo](https://github.com/b3log/solo)的一款小皮肤，预览前往[金戋博客](https://www.jinjianh.com/?skin=solo-star)
 
 ### 食用方式
 * 用Java原生环境下的我也不知道怎么弄，大概的意思是放到skins下就完事了
