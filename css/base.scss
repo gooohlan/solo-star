@@ -21,6 +21,7 @@ $aHover: #e67700 !default;
 $white: #fff !default;
 $tooltipBg: rgba(255, 255, 255, 0.1) !default;
 @import "vditor/src/assets/scss/classic";
+@import "../../../scss/reset";
 html {
   width: 100%;
   height: 100%;
